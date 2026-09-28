@@ -49,8 +49,17 @@ agent-independent (the skill follows the open Agent Skills convention).
 
 ## State
 
-- Only the initial commit: `LICENSE`, a two-line `README.md`. No `## Reuse and
-  citation` section yet (check `~/.claude/templates/reuse/POLICY.md`; mention it
-  once, do not add it unasked).
-- Not started. After this comes task C: the colleague's instructions for an
-  install in an org AWS account.
+- **Template built and merged** (PR #1, 2026-09-28). `README.md` (copy the
+  repo, install the skill, the prompt to give), `AGENTS.md` (use the skill;
+  no `gateway.env` = new gateway, run `init_deployment.sh .` on the repo root;
+  `gateway.env` present = use the copied scripts, not the skill's), `CLAUDE.md`
+  a symlink to it. GitHub template flag is on.
+- License CC0. Reuse section asks for attribution to NMFS Open Science (Eli's
+  choice); install repos inherit it. **No NOAA disclaimer**, by Eli's choice.
+- Verified: `init_deployment.sh .` on a scratch clone adds `scripts/`,
+  `assets/`, `gateway.env`, `models.yaml`, `.gitignore` and leaves the
+  template files alone. **Not verified:** an agent following `AGENTS.md`
+  through a real install.
+- Open threads: after this comes task C, the colleague's instructions for an
+  install in an org AWS account. An install repo keeps the template README;
+  whether the agent should rewrite it for that install is undecided.
