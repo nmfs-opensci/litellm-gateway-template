@@ -15,6 +15,13 @@ ready, deployment, keys, workshop sign-up, organizers without AWS access, and
 teardown. The skill is **Experimental**, and it will tell you which steps have
 not been tested in an account like yours.
 
+## What you need
+
+- An AWS account where you can administer Bedrock, EC2 and CloudFormation.
+- The AWS CLI installed locally: version 2.32 or later, which has
+  `aws login`.
+- git and Python 3.
+
 ## Get started
 
 1. **Make your own copy of this repository.** Click **Use this template** on
@@ -41,26 +48,21 @@ not been tested in an account like yours.
    [Using a skill](https://github.com/nmfs-opensci/agent-skills#using-a-skill)
    section. Restart the agent after installing so it finds the skill.
 
-3. **Start the agent in your copy of this repository and give it this
-   prompt:**
+3. **Start the agent in your copy of this repository and say:**
 
    ```text
-   Set up a LiteLLM gateway to Amazon Bedrock for my workshop,
-   using this repository as the deployment folder.
+   Help me set up LiteLLM.
    ```
 
-   The agent then asks you about your AWS account, Region, models, number of
-   participants, budgets, and who will organize. It stops and asks before
-   creating anything you will be billed for.
+   The agent checks what state this repository is in, tells you what it can
+   do from there, and suggests what to ask next. For a new gateway it asks
+   about your AWS account, Region, domain name and models, and it stops and
+   asks before creating anything you will be billed for.
 
-Later requests go the same way: start the agent in this repository and say what
-you want, such as "make keys for 20 participants", "open sign-up for the
-workshop", "how much has been spent?", "stop the gateway until next week", or
-"tear it down".
-
-You will need an AWS account where you can administer Bedrock, EC2 and
-CloudFormation, plus git and Python 3. The skill lists anything else (such as a
-recent AWS CLI) when it gets to that step.
+Come back the same way whenever you need something. Once the gateway is
+running it can serve several workshops, each with its own sign-up code,
+budgets and organizer, and the agent will suggest how to add one, hand out
+keys, check spending, stop the gateway between events, or tear it down.
 
 ## What ends up in this repository
 
@@ -72,7 +74,9 @@ it unexpectedly. Secrets, build output and the Python environment (`secrets/`,
 `build/`, `.venv/`) are git-ignored.
 
 [`AGENTS.md`](AGENTS.md) holds the instructions your agent reads in this
-repository. `CLAUDE.md` is a link to the same file.
+repository. `CLAUDE.md` is a link to the same file, and
+`.claude/settings.json` has Claude Code greet you with the prompt to use
+when it starts here.
 
 ## Reuse and citation
 
