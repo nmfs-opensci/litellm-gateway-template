@@ -74,7 +74,9 @@ it unexpectedly. Secrets, build output and the Python environment (`secrets/`,
 `build/`, `.venv/`) are git-ignored.
 
 [`AGENTS.md`](AGENTS.md) holds the instructions your agent reads in this
-repository. `CLAUDE.md` is a link to the same file.
+repository. `CLAUDE.md` is a link to the same file, and
+`.claude/settings.json` has Claude Code greet you with the prompt to use
+when it starts here.
 
 ## Reuse and citation
 

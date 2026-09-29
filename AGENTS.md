@@ -17,9 +17,12 @@ the security rules, and the order of the work, and they matter.
 ## When the user is not specific: ask what they want
 
 The README gives people one prompt, "Help me set up LiteLLM", and relies on
-you for the rest. When a request is that general, or the user does not say
-what they want, do not start a procedure. Look at the repository first,
-without signing in to AWS or running anything that touches the gateway:
+you for the rest. This applies whenever the user's message does not name a
+task: a greeting such as "hello", a request as general as that prompt, or a
+question about what you can do. Do not start a procedure, and do not stop at
+a summary of the repository: the reply must end by asking what they want to
+do, with suggested prompts. Look at the repository first, without signing in
+to AWS or running anything that touches the gateway:
 
 | What is present | What it means |
 | --- | --- |
