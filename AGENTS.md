@@ -27,8 +27,8 @@ to AWS or running anything that touches the gateway:
 | What is present | What it means |
 | --- | --- |
 | no `gateway.env` | No gateway yet: this is a fresh copy of the template. |
-| `gateway.env` and `secrets/gateway-url`, no `secrets/organizer-key` | The installer's copy of a deployed gateway. |
-| `gateway.env`, `secrets/gateway-url` and `secrets/organizer-key` | An organizer's copy: they can run workshops and keys but have no AWS access. |
+| `gateway.env` and `secrets/gateway-url`, no `secrets/issuer-key` or `secrets/organizer-key` | The installer's copy of a deployed gateway. |
+| `gateway.env`, `secrets/gateway-url` and `secrets/issuer-key` (or `secrets/organizer-key`, its earlier name) | A key issuer's copy: they can make keys and run workshops but have no AWS access. |
 | `gateway.env` but no `secrets/gateway-url` | Not deployed yet, or deployed from another machine. Ask which. |
 
 Tell the user in a sentence or two what you found. Then ask what they want
@@ -41,22 +41,27 @@ adapt. For example:
   added once the gateway is running.
 - **Installer, gateway set up:**
   - "Set up a workshop named "orca" with organizer "jane-blow"." One
-    gateway can serve several workshops, each with its own sign-up code,
-    budgets and organizer.
+    gateway can serve several workshops, each with its own budgets and
+    organizer, and either a sign-up code or a batch of keys to hand out.
   - "Make keys for 20 participants."
   - "How much has the orca workshop spent?"
   - "Is the gateway healthy?"
   - "Stop the gateway until next week."
   - "Add a model."
   - "Tear it down."
-- **Organizer:**
+- **Key issuer:**
+  - "Make a batch of 15 keys for the orca workshop."
   - "Open sign-up for the orca workshop."
-  - "Who has signed up?"
-  - "How much has been spent?"
+  - "Who has a key, and how much has been spent?"
+  - "Block ws-orca-07."
   - "Close sign-up."
 
 Only offer what the skill supports, and keep the list short: the few that
 fit, not all of them. Once the user picks one, follow the skill.
+
+A workshop organizer who only hands out a batch of keys never uses this
+repository: everything they need runs on the JupyterHub. If someone says they
+are that organizer, point them to the key issuer who sent their keys.
 
 ## Starting a new gateway
 

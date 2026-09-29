@@ -11,9 +11,10 @@ agent following the
 [`litellm-bedrock-gateway`](https://github.com/nmfs-opensci/agent-skills/tree/main/skills/litellm-bedrock-gateway)
 skill from [nmfs-opensci/agent-skills](https://github.com/nmfs-opensci/agent-skills).
 It asks you the setup questions, and it covers AWS sign-in, getting Bedrock
-ready, deployment, keys, workshop sign-up, organizers without AWS access, and
-teardown. The skill is **Experimental**, and it will tell you which steps have
-not been tested in an account like yours.
+ready, deployment, keys, workshop sign-up, batches of keys for workshop
+organizers, issuing keys without AWS access, and teardown. The skill is
+**Experimental**, and it will tell you which steps have not been tested in an
+account like yours.
 
 ## What you need
 
@@ -60,15 +61,16 @@ not been tested in an account like yours.
    asks before creating anything you will be billed for.
 
 Come back the same way whenever you need something. Once the gateway is
-running it can serve several workshops, each with its own sign-up code,
-budgets and organizer, and the agent will suggest how to add one, hand out
-keys, check spending, stop the gateway between events, or tear it down.
+running it can serve several workshops, each with its own budgets and
+organizer, and either a sign-up code or a batch of keys, and the agent will
+suggest how to add one, hand out keys, check spending, stop the gateway between events, or tear it down.
 
 ## What ends up in this repository
 
 When the agent sets up the gateway, it copies the skill's scripts and templates
 into this repository and adds `gateway.env` and `models.yaml`, which hold your
-settings. It also writes participant and organizer guides under `docs/`. Your
+settings. It also writes participant, key issuer and organizer guides under
+`docs/`. Your
 gateway keeps running on that copy, so later changes to the skill cannot change
 it unexpectedly. Secrets, build output and the Python environment (`secrets/`,
 `build/`, `.venv/`) are git-ignored.
