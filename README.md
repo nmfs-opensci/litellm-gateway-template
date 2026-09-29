@@ -15,6 +15,13 @@ ready, deployment, keys, workshop sign-up, organizers without AWS access, and
 teardown. The skill is **Experimental**, and it will tell you which steps have
 not been tested in an account like yours.
 
+## What you need
+
+- An AWS account where you can administer Bedrock, EC2 and CloudFormation.
+- The AWS CLI installed locally: version 2.32 or later, which has
+  `aws login`.
+- git and Python 3.
+
 ## Get started
 
 1. **Make your own copy of this repository.** Click **Use this template** on
@@ -57,10 +64,6 @@ Later requests go the same way: start the agent in this repository and say what
 you want, such as "make keys for 20 participants", "open sign-up for the
 workshop", "how much has been spent?", "stop the gateway until next week", or
 "tear it down".
-
-You will need an AWS account where you can administer Bedrock, EC2 and
-CloudFormation, plus git and Python 3. The skill lists anything else (such as a
-recent AWS CLI) when it gets to that step.
 
 ## What ends up in this repository
 
