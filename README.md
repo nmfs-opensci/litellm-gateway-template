@@ -48,32 +48,21 @@ not been tested in an account like yours.
    [Using a skill](https://github.com/nmfs-opensci/agent-skills#using-a-skill)
    section. Restart the agent after installing so it finds the skill.
 
-3. **Start the agent in your copy of this repository and give it this
-   prompt:**
+3. **Start the agent in your copy of this repository and say:**
 
    ```text
-   Use the litellm-bedrock-gateway skill to set up a LiteLLM gateway
-   to Amazon Bedrock.
+   Help me set up LiteLLM.
    ```
 
-   The agent then asks you about your AWS account, Region, domain name and
-   models. It stops and asks before creating anything you will be billed for.
+   The agent checks what state this repository is in, tells you what it can
+   do from there, and suggests what to ask next. For a new gateway it asks
+   about your AWS account, Region, domain name and models, and it stops and
+   asks before creating anything you will be billed for.
 
-4. **Add workshops once the gateway is running.** One gateway can serve
-   several workshops, each with its own sign-up code, budgets and organizer.
-   Start the agent in this repository and say, for example:
-
-   ```text
-   Set up a workshop named "orca" with organizer "jane-blow".
-   ```
-
-   The agent asks how many people, for how long, and the budget per person.
-   An organizer without AWS access gets their own key for running the
-   workshop, never your admin credentials.
-
-Other requests go the same way: start the agent in this repository and say
-what you want, such as "make keys for 20 participants", "how much has the orca
-workshop spent?", "stop the gateway until next week", or "tear it down".
+Come back the same way whenever you need something. Once the gateway is
+running it can serve several workshops, each with its own sign-up code,
+budgets and organizer, and the agent will suggest how to add one, hand out
+keys, check spending, stop the gateway between events, or tear it down.
 
 ## What ends up in this repository
 
