@@ -100,5 +100,5 @@ this repository is often public:
 
 ## This file
 
-`CLAUDE.md` is a symbolic link to this file, so Claude Code and agents that read
-`AGENTS.md` get the same instructions. Edit `AGENTS.md`.
+`CLAUDE.md` contains only `@AGENTS.md`, which makes Claude Code read this file;
+other agents read `AGENTS.md` directly. Edit `AGENTS.md`, not `CLAUDE.md`.
